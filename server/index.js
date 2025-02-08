@@ -3,11 +3,11 @@ import cors from 'cors';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import { config } from '../config/config.js';
-import { connectDB } from './config/database.js';
+import { initNeo4j } from './config/neo4j.js';
 import apiRoutes from './routes/api.js';
 
-// Connect to MongoDB
-await connectDB();
+// Initialize Neo4j
+await initNeo4j();
 
 const app = express();
 
